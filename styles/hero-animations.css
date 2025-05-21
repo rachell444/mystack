@@ -1,0 +1,75 @@
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0) translateX(20px);
+  }
+  75% {
+    transform: translateY(10px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.tech-marquee {
+  display: flex;
+  width: max-content;
+}
+
+.animate-marquee {
+  animation: marquee 45s linear infinite;
+}
+
+.tech-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes techLogoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.tech-logo-float {
+  animation: techLogoFloat 3s ease-in-out infinite;
+}
+
+.bg-blur-gradient {
+  position: relative;
+}
+
+.bg-blur-gradient::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  background: linear-gradient(45deg, rgba(59,130,246,0.3), rgba(139,92,246,0.3));
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0.5;
+}
